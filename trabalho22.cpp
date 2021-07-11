@@ -1,22 +1,3 @@
-void loop() {
-    int val1, val2, val3;
-    val1 = analogRead(A0);
-    val2 = analogRead(A1);
-    val3 = analogRead(A2);
-
-    //define o contador do botão, adiciona 1 a cada vez que o botão sofrer um click
-    if (digitalRead(botao) == LOW) {
-        var_botao = var_botao + 1;
-        if (var_botao == 4) 
-            var_botao = 1;
-
-        delay(100);
-    }
-
-    saida_adc(val1, val2, val3);
-    saida_comparador(val1, val2, val3);
-}
-thinety — Ontem às 19:47
 #include <Arduino.h>
 
 //variáveis fixas
