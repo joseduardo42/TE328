@@ -12,7 +12,7 @@ void setup(){
 void sum(int val_leitura, int i){
     //soma dos valores
     int i_sum, soma_sum;
-    for (i_sum=0, i, pos++){
+    for (i_sum=0, i, i_sum++){
         soma_sum += val_leitura[i_sum];
         //lcd mostra a soma
     }
@@ -35,6 +35,9 @@ void media(int val_leitura, int i){
     }
 }
 
+int i = 0;
+int qtd_val = 0;
+int qtd_sobrescrito = 0;
 void loop(){
     //vetor malloc para as leituras
     int *val_leitura;
@@ -42,18 +45,20 @@ void loop(){
 
     //leitura da porta analógica
     int analogPort;
-    int i;
-    for (i=0, (tamanho-1), i++){
-        val_leitura[i] = analogReaf(A0);
-        media(val_leitura, i);
-        sum(val_leitura, i);
-        int qtd++;
-        //lcd print qtd
+    val_leitura[i] = analogRead(A0);
+    //print val_leitura e val_leitura -1
+    media(val_leitura, i);
+    sum(val_leitura, i);
+    //print quantidade de valores
+    qtd_val++;
+    if (qtd_val > tamanho){
+        int qtd_sobrescrito++;
+    }
+    if (i == (tamanho-1)){}
+        i=0;
     }
 
-
-
-
+    
     lcd.setCursor(3,0);
     lcd.print("OLA");
     lcd.setCursor(4,1);
