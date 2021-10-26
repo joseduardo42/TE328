@@ -25,7 +25,7 @@ void saida_comparador(int val1, int val2, int val3) {
     if (val3 > val2 && val3 > val1)
         digitalWrite(12, HIGH);
 }
-
+ 
 void saida_adc(int val_4bits) {
     //loop para escrever a tensão lida nos bits de saida a cada click no botão
     for (int i = 0; i < 4; ++i) {
