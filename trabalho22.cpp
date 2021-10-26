@@ -1,11 +1,10 @@
 #include <Arduino.h>
-
 //variáveis fixas
 int botao = 9;
 int modo_de_operacao = 1;
 
 void setup() {
-    //pinos de entrada para o botão e de saida para leds
+    //pinos de entrada para o botão e de saida para LEDs
     pinMode(botao, INPUT_PULLUP);
 
     pinMode(5, OUTPUT);
@@ -42,7 +41,6 @@ void saida_adc(int val_4bits) {
 
 void loop() {
     int val1, val2, val3;
-
     val1 = analogRead(A0);
     val2 = analogRead(A1);
     val3 = analogRead(A2);
@@ -55,9 +53,8 @@ void loop() {
         if (modo_de_operacao == 4) 
             modo_de_operacao = 1;
 
-        delay(100);
+        delay(500);
     }
-
     // conversão do sinal de 10 bits para 4 bits
     int val_4bits;
     switch (modo_de_operacao) {
